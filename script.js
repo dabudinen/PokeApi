@@ -39,7 +39,7 @@ const searchPokemon = event => {
 }
 
 const renderPokemonData = data => {
-    const sprite = data.sprites.front_shiny;
+    const sprite = data.sprites.front_default;
     const { stats, types } = data;
 
     pokeName.textContent = data.name;
