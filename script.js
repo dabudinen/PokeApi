@@ -39,10 +39,17 @@ const searchPokemon = event => {
 }
 
 const renderPokemonData = data => {
-    const sprite = data.sprites.front_default;
-    const { stats, types } = data;
 
-    pokeName.textContent = data.name;
+    const checkShinny = document.getElementById("cbox1")
+    const { stats, types } = data;
+    if (checkShinny.checked == false){
+        sprite = data.sprites.front_default;
+        pokeName.textContent = data.name;
+    } else{
+        sprite = data.sprites.front_shiny;
+        pokeName.textContent = `${data.name} shiny `;
+    }
+
     pokeImg.setAttribute('src', sprite);
     pokeId.textContent = `# ${data.id}`;
 
